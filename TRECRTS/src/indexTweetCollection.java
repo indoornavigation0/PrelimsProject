@@ -11,6 +11,7 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.search.similarities.BM25Similarity;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.json.simple.parser.ParseException;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,9 +20,11 @@ import java.nio.file.Paths;
 //import org.apache.lucene.analysis.standard.StandardAnalyzer;
 
 public class indexTweetCollection {
-	public static void main(String[] args) throws IOException {
-		indexTweetCollection rt = new indexTweetCollection();
-		rt.Indexer("/Users/sri/Downloads/RTS2017/index");
+	public static void main(String[] args) throws IOException, ParseException, org.apache.lucene.queryparser.classic.ParseException {
+		//indexTweetCollection it = new indexTweetCollection();
+		queryTweetCollection qt = new queryTweetCollection();
+		//it.Indexer("/Users/sri/Downloads/RTS2017/index");
+		qt.QueryBuilder("/Users/sri/Downloads/RTS2017/index");
 	}
 
 	public void Indexer(String indexdirpath) throws IOException
